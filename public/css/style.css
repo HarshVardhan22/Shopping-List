@@ -13,19 +13,48 @@ body{
     font-family: sans-serif; 
 }
 
-.show {
+.items:not(h1){
+    font-size:20px;
+}
+.show >* {
     margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 20px;
 }
 
-form > * {
-    margin: 5px 0;
+input{
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size:20px;
+    border-radius: 5px;
+    position: relative;
+    top:5px;
+    padding: 5px;
+}
+form :first-child {
+    margin-top : 15px;
+}
+
+input:hover{
+    transition: all 0.3s;
+    transform : scale(1.05,1.05);
+    border: 2px solid rgb(0, 245, 0);
 }
 
 button{
     border-radius: 10px;
     padding: 5px;
+    font-size:20px;
     background: orangered;
     box-shadow: 1px 1px gray;
     color: white;
+    margin-bottom: 50px;
 }
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

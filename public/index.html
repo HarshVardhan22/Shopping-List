@@ -13,18 +13,36 @@
             <p><span class='id'></span><span class='name'></span><span class='price'></span> </p>
             <button class="showButton">Show All</button>
         </div>
+
         <form class="add items">
-            <input type="text" class = 'name' placeholder="Product Name">
-            <input type="text" class="price" placeholder="Price">
+            <div class="flex">
+                <label >Product Name</label>
+                <input type="text" class = 'name' placeholder="Enter Product Name">
+            </div>
+            <div class="flex">
+                <label class = 'price'>Price</label>
+                <input type="text" class="price" placeholder="Enter Price">
+            </div>
             <button class="addButton">Add Product</button>
         </form>
+
         <form class="update items">
-            <input type="text" class='id' placeholder="Product ID">
-            <input type="text" class="price" placeholder="Price">
+            <div class="flex">
+                <label>Product ID</label>
+                <input type="text" class='id' placeholder="Enter Product ID">
+            </div>
+            <div class="flex">
+                <label>Price</label>
+                <input type="text" class="price" placeholder=" Enter Price">
+            </div>
             <button class="updateButton">Update Price</button>
         </form>
+
         <form class="delete items">
-            <input type="text" class='id' placeholder="Product ID">
+            <div class="flex">
+                <label>Product ID</label>
+                <input type="text" class='id' placeholder="Enter Product ID">
+            </div>
             <button class="delButton">Delete Product</button>
         </form>
     </div>
