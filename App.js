@@ -37,6 +37,7 @@ remove();
 
 //*******Fetching product from user **************//
 let express = require('express');
+const { userInfo } = require('os');
 let app = express();
 
 app.use(express.static('public'));
@@ -72,19 +73,34 @@ function getItemById(idy){
     }
 
 app.put('/list/:id', (req,resp)=> {
-       let item = getItemById(req.params.id);
-    if(!item)
-    {
-        resp.send("No such item found");
-    }
     
-    else
-    {
+    let item = getItemById(req.params.id);
+    
+    if(!item){
+        resp.send("No such item found");
+     } 
+    
+    else{ 
         item.itemPrice = req.body.itemPrice;
         resp.send('Updated!');
-    }
+     }
 })
 
+app.delete('/list/:id', (req, resp) => {
+    let item = getItemById(req.params.id);
+    
+    if (!item) {
+       
+        resp.send("No such item found");
+    }
+    else{
+        list.splice(list.indexOf(item),1);
+        for(let i = 0; i<list.length; i++){
+            list[i].id = i+1;
+            id = i+2;
+        }
+        resp.send("removed");
+    }
 
-
+})
 app.listen(3000,() => console.log("Connected to 3000"));

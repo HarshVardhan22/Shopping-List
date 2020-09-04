@@ -56,3 +56,15 @@ function update() {
     }).then((response) => response.text())
         .then((data) => console.log(data));
 }
+
+/******TO DELETE Products********************/
+
+function del() {
+    let del_id = document.querySelector('.del_id').value;
+    fetch('http://localhost:3000/list/' + del_id, {
+       
+        method: 'DELETE',
+       
+    }).then((response) => response.text())
+        .then((data) => console.log(data));
+}

@@ -1,5 +1,5 @@
 body{
-    background-color: wheat;
+   background-image: linear-gradient( 135deg, #FF9D6C 10%, #BB4E75 100%);
     min-height: 100vh;
     margin: 0;
 }
@@ -10,23 +10,30 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: sans-serif; 
+    font-family: sans-serif;
 }
 
 .items:not(h1){
     font-size:20px;
+    
 }
-.show >* {
+.show >*:not(button) {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 20px;
+}
+
+.show button{
+     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 input{
     margin-left: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size:20px;
+    font-size:18px;
+    font-family: sans-serif;
     border-radius: 5px;
     position: relative;
     top:5px;
@@ -43,18 +50,35 @@ input:hover{
 }
 
 button{
+    background-image: linear-gradient(to right, #000000 0%, #434343 51%, #000000 100%);
     border-radius: 10px;
-    padding: 5px;
-    font-size:20px;
-    background: orangered;
+    padding: 7
+    px;
+    font-size:16px;
     box-shadow: 1px 1px gray;
     color: white;
     margin-bottom: 50px;
+}
+
+button:hover{
+    transition: all 0.3s;
+    background-position: right center;
+    padding: 10px;
 }
 
 .flex {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.label{
+    position: relative;
+    left:40px;
+}
+
+.product:first-child{
+    position: relative;
+    left:12px;
 }
 

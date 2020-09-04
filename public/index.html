@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Charm' rel='stylesheet'>
     <link rel="stylesheet" href="./css/style.css">
     <title>Shoping List</title>
 </head>
@@ -20,7 +21,7 @@
                 <label >Product Name</label>
                 <input type="text" class = 'name' placeholder="Enter Product Name">
             </div>
-            <div class="flex">
+            <div class="flex label">
                 <label >Price</label>
                 <input type="text" class="price" placeholder="Enter Price">
             </div>
@@ -28,11 +29,11 @@
         </form>
 
         <form class="update items">
-            <div class="flex">
+            <div class="flex product">
                 <label>Product ID</label>
                 <input type="text" class='id' placeholder="Enter Product ID">
             </div>
-            <div class="flex">
+            <div class="flex label">
                 <label>Price</label>
                 <input type="text" class="newPrice" placeholder=" Enter Price">
             </div>
@@ -42,9 +43,9 @@
         <form class="delete items">
             <div class="flex">
                 <label>Product ID</label>
-                <input type="text" class='id' placeholder="Enter Product ID">
+                <input type="text" class='del_id' placeholder="Enter Product ID">
             </div>
-            <button class="delButton">Delete Product</button>
+            <button onclick = "del()" class="delButton">Delete Product</button>
         </form>
     </div>
 <script src="./js/script.js"></script>
