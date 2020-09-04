@@ -1,6 +1,5 @@
-let express = require('express');
-let app = express();
-let mongoose = require('mongoose');
+
+/*let mongoose = require('mongoose');
 mongoose.connect(`mongodb://localhost/list`).then(()=>console.log('Connected to Database'))
                                                 .catch(()=> console.log('Error connecting to Database'));
 let Schema = mongoose.Schema;
@@ -8,11 +7,13 @@ let Schema = mongoose.Schema;
 let listSchema = new Schema({
      id : Number,
      name : String,
-     price : Number
+     price : String
 });
 
 let List = mongoose.model('List', listSchema );
-//***************Add Product******//
+let list = [];
+let id = 1;
+//***************Add Product******/
 
 /*
 item = new List({
@@ -34,5 +35,56 @@ async function remove(){
 remove();
 */
 
+//*******Fetching product from user **************//
+let express = require('express');
+let app = express();
+
 app.use(express.static('public'));
+app.use(express.json());
+
+let list = [];
+let id = 1;
+
+app.get ('/list', (req,resp)=> {
+    resp.send(list);
+})
+
+app.post('/list', (req,resp)=> {
+    let newItem = req.body;
+    newItem.id = id;
+    id++;
+    list.push(newItem);
+    console.log(list);
+    resp.send('Created!'); 
+})
+
+function getItemById(idy){
+    let numID = +idy;
+    for( let i = 0; i<list.length ;i++)
+    {
+        if(list[i].id === numID)
+        {
+            return (list[i]);
+        }
+    };
+    
+    return (null);
+    }
+
+app.put('/list/:id', (req,resp)=> {
+       let item = getItemById(req.params.id);
+    if(!item)
+    {
+        resp.send("No such item found");
+    }
+    
+    else
+    {
+        item.itemPrice = req.body.itemPrice;
+        resp.send('Updated!');
+    }
+})
+
+
+
 app.listen(3000,() => console.log("Connected to 3000"));

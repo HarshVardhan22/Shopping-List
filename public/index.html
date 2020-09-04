@@ -10,8 +10,9 @@
     <div class="container">
         <h1 class="items">Shopping List</h1>
         <div class="show items">
-            <p><span class='id'></span><span class='name'></span><span class='price'></span> </p>
-            <button class="showButton">Show All</button>
+            <ul class = 'list'>
+            </ul>
+            <button onclick ="show()" class="showButton">Show All</button>
         </div>
 
         <form class="add items">
@@ -20,10 +21,10 @@
                 <input type="text" class = 'name' placeholder="Enter Product Name">
             </div>
             <div class="flex">
-                <label class = 'price'>Price</label>
+                <label >Price</label>
                 <input type="text" class="price" placeholder="Enter Price">
             </div>
-            <button class="addButton">Add Product</button>
+            <button onclick = "add()" class="addButton">Add Product</button>
         </form>
 
         <form class="update items">
@@ -33,9 +34,9 @@
             </div>
             <div class="flex">
                 <label>Price</label>
-                <input type="text" class="price" placeholder=" Enter Price">
+                <input type="text" class="newPrice" placeholder=" Enter Price">
             </div>
-            <button class="updateButton">Update Price</button>
+            <button onclick="update()" class="updateButton">Update Price</button>
         </form>
 
         <form class="delete items">
@@ -46,5 +47,6 @@
             <button class="delButton">Delete Product</button>
         </form>
     </div>
+<script src="./js/script.js"></script>
 </body>
 </html>
