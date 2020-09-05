@@ -8,9 +8,9 @@
     "mongoose": "^5.10.2"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+ "scripts": {
+  "start": "node App.js"
+}
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HarshVardhan22/Shopping-List.git"
