@@ -103,4 +103,5 @@ app.delete('/list/:id', (req, resp) => {
     }
 
 })
-app.listen(3000,() => console.log("Connected to 3000"));
+let port = process.env.PORT || 3000;
+app.listen(3000,() => console.log(`Listening ${port}...`));
