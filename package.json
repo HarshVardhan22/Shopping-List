@@ -1,18 +1,15 @@
 {
   "name": "shopping-list",
   "version": "1.0.0",
-  "description": "",
   "main": "App.js",
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^5.10.2"
   },
   "devDependencies": {},
-"scripts": {
-  
-  "start": "node app.js"
-  
-},
+  "scripts": {
+    "start": "node app.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HarshVardhan22/Shopping-List.git"
@@ -22,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/HarshVardhan22/Shopping-List/issues"
   },
-  "homepage": "https://github.com/HarshVardhan22/Shopping-List#readme"
+  "homepage": "https://github.com/HarshVardhan22/Shopping-List#readme",
+  "description": ""
 }
