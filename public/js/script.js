@@ -11,7 +11,7 @@ let newPrice = document.querySelector('.newPrice');
 
 function show(){
     showList.innerHTML = '';
-    fetch('http://localhost:3000/list').then ((response) => response.json())
+    fetch('/list').then ((response) => response.json())
                                        .then((data) => {
                                            data.forEach((list) => {
                                                let li = document.createElement('li');
@@ -24,7 +24,7 @@ function show(){
 //*******************Add products************* */
 function add(){
     
-    fetch('http://localhost:3000/list',{
+    fetch('/list',{
         method :'POST',
         headers:{
             'Accept': 'text/plain',
@@ -43,7 +43,7 @@ function add(){
 
 function update() {
     let id = document.querySelector('.id').value;
-    fetch('http://localhost:3000/list/' + id, {
+    fetch('/list/' + id, {
         method: 'PUT',
         headers: {
             'Accept': 'text/plain',
@@ -61,7 +61,7 @@ function update() {
 
 function del() {
     let del_id = document.querySelector('.del_id').value;
-    fetch('http://localhost:3000/list/' + del_id, {
+    fetch('/list/' + del_id, {
        
         method: 'DELETE',
        
