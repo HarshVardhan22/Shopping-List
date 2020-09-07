@@ -1,7 +1,6 @@
 //********* ADDING ELEMENTS*********//
-let name = document.querySelector('.name');
-let price = document.querySelector('.price');
-let showList = document.querySelector('.list');
+
+
 
 let newPrice = document.querySelector('.newPrice');
 //console.log(id);
@@ -10,6 +9,7 @@ let newPrice = document.querySelector('.newPrice');
 //****************SHOW LIST ITEMS 
 
 function show(){
+    let showList = document.querySelector('.list');
     showList.innerHTML = '';
     fetch('/list').then ((response) => response.json())
                                        .then((data) => {
@@ -23,16 +23,16 @@ function show(){
 
 //*******************Add products************* */
 function add(){
-    
+  let name = document.querySelector('.name');
+let price = document.querySelector('.price');  
     fetch('/list',{
         method :'POST',
         headers:{
-            'Accept': 'text/plain',
-            'Content-Type' : 'application/JSON'
+            
+            'Content-Type' : 'application/json'
         },
         body :JSON.stringify({
-            id : 0,
-            itemName : name.value,
+            itemName : `${name.value}`,
             itemPrice : 'Rs. '+ `${price.value}`
         })
     }).then((response) => response.txt())
@@ -46,8 +46,8 @@ function update() {
     fetch('/list/' + id, {
         method: 'PUT',
         headers: {
-            'Accept': 'text/plain',
-            'Content-Type': 'application/JSON'
+            
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             
